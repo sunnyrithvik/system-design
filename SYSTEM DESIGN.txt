@@ -1,0 +1,56 @@
+
+SYSTEM DESIGN
+
+What is system design
+set of requirements
+- decide architecture
+- decide components
+- decide modules
+
+how they interact each other for product dev
+
+how to approach system design
+- understand the problem statement
+- break it down into components
+- dissect each component
+
+for each sub-component look into 
+1. database and caching
+2. scaling and fault tolerance
+3. async processing (delegation)
+4. communication
+add sub-components if needed
+
+big problem
+- up-down approach
+small detailed or specific/ focussed
+- bottom-up approach  
+
+for a good sys design
+1. you broke your sys into components
+2. every component has a clear set of responsibilities (exclusive)
+3. for each component you have slight technical details figured out
+4. each component (in isolation) is
+	- scalable
+	- fault tolerant
+	- available
+
+
+II. Databases
+
+Relational Databases
+- History of relational db
+key properties are
+	1.data consistency
+	2.data durability
+	3.data integrity
+	4.constraints
+	5.everything in on place
+
+transactions
+ACID 
+Atomicity - all statements within a transaction takes effect or none
+Consistency - data will never go incorrect, no matter what constraints, cascades, triggers
+Isolation - when multiple transactions are executing parallely, the isolation level determines how much changes of one transaction are visible to other
+Durability - when transaction commits, the changes outlives outage
+
