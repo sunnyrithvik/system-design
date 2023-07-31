@@ -36,21 +36,5 @@ for a good sys design
 	- available
 
 
-II. Databases
 
-Relational Databases
-- History of relational db
-key properties are
-	1.data consistency
-	2.data durability
-	3.data integrity
-	4.constraints
-	5.everything in on place
-
-transactions
-ACID 
-Atomicity - all statements within a transaction takes effect or none
-Consistency - data will never go incorrect, no matter what constraints, cascades, triggers
-Isolation - when multiple transactions are executing parallely, the isolation level determines how much changes of one transaction are visible to other
-Durability - when transaction commits, the changes outlives outage
 
