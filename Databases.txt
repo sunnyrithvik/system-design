@@ -39,3 +39,68 @@ d. Serializable
 	and while one transaction read, other transactions will have to wait
 
 * storage engines can alter the implementation
+
+--------------------------------------
+3. Scaling Databases
+
+ These techniques are applicable to most databases out there 
+ (both relational and non-relational)
+
+ a. Vertical scaling
+ 	- add more cpu, ram, disk to the DB
+ 	- requires downtime during reboot
+ 	- gives you ability to handle "scale", more load
+ 	- vertical scaling has a physical hardware limitation
+
+ b. Horizantal scaling
+
+ 	I.Read Replicas
+ 		- when read:write = 90:10
+ 		- you move reads to other db so that "master" is free to do writes
+ 				sync/async
+api --->master --------------> replica
+ 				replication
+
+ 		- api servers should know which db to connect to get things done
+
+ 	Replication 
+ 		- changes on one database (master) needs to be sent to replica to maintain consistency
+ 		two modes of replication
+ 		1. Sync replication
+ 				w 		  w             w
+ 			------->   ------->		 ------->
+ 		user		API 	   Master		Replica
+ 			<-------   <-------		 <-------
+
+ 			- strong consistency
+ 			- zero replication lag
+ 			- slower writes
+
+ 		2. Async replication
+ 				w 		  w             
+ 			------->   ------->		 ------->
+ 		user		API 	   Master		Replica
+ 			<-------   <-------		 <-------
+
+ 			- eventual consistency
+ 			- some replication lag
+ 			- faster writes
+
+ 	II. Sharding
+ 		- because one node cannot handle the data/load we split it into multiple exclusive subsets writes on a particular row/document will go to particular shard
+ 		This way we scale overall database load
+
+ 		API -> shard1,shard2,shard3
+
+ 		note:shards are independent, no replication b/w them
+ 		api servers need to know whom to connect to, to get things done
+
+ 		each shard can have its own replica
+
+ 		note:some db has a proxy that takes care of routing 
+
+--------------------------------------
+4. Sharding and partitioning
+
+
+
