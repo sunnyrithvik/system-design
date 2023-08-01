@@ -1,5 +1,7 @@
 II. Databases
 
+1. Relational Databases
+
 Relational Databases
 - History of relational db
 key properties are
@@ -15,3 +17,25 @@ Atomicity - all statements within a transaction takes effect or none
 Consistency - data will never go incorrect, no matter what constraints, cascades, triggers
 Isolation - when multiple transactions are executing parallely, the isolation level determines how much changes of one transaction are visible to other
 Durability - when transaction commits, the changes outlives outage
+
+--------------------------------------
+2. Database Isolation levels
+
+Isolation levels dictate how much one transaction knows about the other
+a. Repeatable reads
+	- consistent reads within same transaction
+		even if other transaction committed 1st transaction would not see the changes (if value already read)
+
+b. Read committed
+	- reads within the same transaction always reads fresh value
+		con: multiple reads within same transaction are inconsistent
+
+c. Read uncommitted
+	- reads every uncommitted values from other transactions
+		"dirty reads"
+
+d. Serializable
+	- every read is a locking read (depends on engine)
+	and while one transaction read, other transactions will have to wait
+
+* storage engines can alter the implementation
