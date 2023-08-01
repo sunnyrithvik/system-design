@@ -102,5 +102,45 @@ api --->master --------------> replica
 --------------------------------------
 4. Sharding and partitioning
 
+Sharding: Method of distributing data across multiple machines
 
+Partitioning: Spitting a subset of data within the same instance 
 
+How a database is scaled ?
+
+	A database server is just database process (mySQL, mango db) running on an ec2 machine
+
+- You put your database in production serving real traffic
+- you are getting more users that your db is unable to manage you scale up your db, give it more CPU Ram and disc  
+- Your product went viral and your bulky database is unable to handle the lord so you scale up again
+- but after a certed stage you know you would not be able to scale up your database because vertical scaling has a limit 
+- so you will have to resort to horizontal scaling
+- Say one db server was handling 1000 WPS and we cannot scale up beyond that but we are getting 1500 WPS we scale horizontally and split the data 
+- by adding one more database server we reduced the load to 750 WPS on each node and thus handled higher throughput 
+
+Each database server is does a shard and we say that the data is partitioned
+
+ overall a database is shared while the data is partition 
+
+ -> You partition the 100 GB of total data into 5 mutually exclusive partitions
+ - each of these partitions can either live on one database server or a couple of them can share one server
+ - and this depends on the number of shards you have 
+
+How to partition the data ?
+
+there are two categories of partitioning
+1. horizontal partitioning (splitting rows in two dbs) very common
+2. vertical partitioning (spliting tables in two diff dbs) monolith to microservices
+
+ when we split the 100 GB data we could have used either of the ways but deciding which one to pick depends on load usecase and access patterns 
+
+Advantages of sharing
+- handle  large reads and writes
+- increase overall storage capacity
+- higher availability
+
+disadvantages of sharding
+- operationally complex
+- cross-shard queries expensive
+
+--------------------------------------
