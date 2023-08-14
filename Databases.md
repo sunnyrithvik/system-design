@@ -5,11 +5,11 @@
 Relational Databases
 - History of relational db
 - key properties are
-	1.data consistency
-	2.data durability
-	3.data integrity
-	4.constraints
-	5.everything in on place
+	1. Data consistency
+	2. Data durability
+	3. Data integrity
+	4. Constraints
+	5. Everything in on place
 
 #### Transactions
 ACID 
