@@ -1,25 +1,26 @@
-II. Databases
+# II. Databases
 
-1. Relational Databases
+## 1. Relational Databases
 
 Relational Databases
 - History of relational db
-key properties are
+- key properties are
 	1.data consistency
 	2.data durability
 	3.data integrity
 	4.constraints
 	5.everything in on place
 
-transactions
+#### Transactions
 ACID 
-Atomicity - all statements within a transaction takes effect or none
-Consistency - data will never go incorrect, no matter what constraints, cascades, triggers
-Isolation - when multiple transactions are executing parallely, the isolation level determines how much changes of one transaction are visible to other
-Durability - when transaction commits, the changes outlives outage
+- Atomicity - all statements within a transaction takes effect or none
+- Consistency - data will never go incorrect, no matter what constraints, cascades, triggers
+- Isolation - when multiple transactions are executing parallely, the isolation level determines how much changes of one transaction are visible to other
+- Durability - when transaction commits, the changes outlives outage
 
---------------------------------------
-2. Database Isolation levels
+---
+
+## 2. Database Isolation levels
 
 Isolation levels dictate how much one transaction knows about the other
 a. Repeatable reads
@@ -134,7 +135,7 @@ there are two categories of partitioning
 
  when we split the 100 GB data we could have used either of the ways but deciding which one to pick depends on load usecase and access patterns 
 
-Advantages of sharing
+Advantages of sharding
 - handle  large reads and writes
 - increase overall storage capacity
 - higher availability
