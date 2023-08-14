@@ -22,9 +22,9 @@ how to approach system design
 add sub-components if needed
 
 big problem
-- up-down approach
+	- up-down approach
 small detailed or specific/ focussed
-- bottom-up approach  
+	- bottom-up approach  
 
 #### for a good sys design
 1. you broke your sys into components
